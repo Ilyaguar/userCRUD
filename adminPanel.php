@@ -7,7 +7,7 @@
   <body>
     <?php 
     include 'JsonDBStore.php';
-    getDB();
+    echo getDB();
     ?>
   </body>
 </html>

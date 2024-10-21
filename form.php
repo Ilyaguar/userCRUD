@@ -85,7 +85,7 @@
         if(array_key_exists('button_submit',$_POST)){
             $registration_state = reg_user();
             if ($registration_state == 0){
-                header('Location: JsonDBStore.php');
+                header('Location: adminPanel.php');
                 exit();
             }
         }

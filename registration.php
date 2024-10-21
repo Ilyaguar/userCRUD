@@ -25,7 +25,7 @@ function validation($name, $login, $password){
     if(strlen($name) > 16){
         return 1;
     }
-    elseif (strlen($name) > 32){
+    elseif (strlen($login) > 32){
         return 2;
     }
     elseif(strlen($password) < 8 || strlen($password) > 32){

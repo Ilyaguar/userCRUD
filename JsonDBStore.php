@@ -1,16 +1,15 @@
 <?php
 function addUser($name, $login, $password){
-    $array = array(
+    $users_json = json_decode(file_get_contents('userDB.json'), true);
+    $users_json['users'][] = [
         'User_id' => 0,
         'Name' => $name,
         'Login' => $login,
         'Password' => $password,
         'Active' => 0
-    );
-    $user_json = json_encode($array, JSON_UNESCAPED_UNICODE);
-    $filename = __DIR__ . '/userDB.json';
- 
-    file_put_contents($filename, $user_json);
+    ];
+    file_put_contents('userDB.json', json_encode($users_json));
+    echo "пользователь успешно добавлен: $name, $login, $password\n\n";
     return 0;
 }
 
